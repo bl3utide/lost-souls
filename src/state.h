@@ -2,11 +2,12 @@
 #define STATE_H
 
 #include <iostream>
+#include "action.h"
 
-class StateAction final
+class StateAction final : public ActionBase
 {
 public:
-    void execute();
+    void execute() const override;
 };
 
 class Context;

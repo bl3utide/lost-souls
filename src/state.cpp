@@ -1,6 +1,6 @@
 #include "state.h"
 
-void StateAction::execute()
+void StateAction::execute() const
 {
     Context* context = new Context(new ConcreteStateA);
     context->request1();
