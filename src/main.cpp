@@ -4,6 +4,7 @@
 #include "callback.h"
 #include "state.h"
 #include "smart_pointer.h"
+#include "mediator.h"
 
 static void exeCallbackAction()
 {
@@ -38,9 +39,17 @@ static void exeSmartPointerAction()
     action->execute();
 }
 
+static void exeMediatorAction()
+{
+    std::cout << "======== mediator ========" << std::endl;
+    auto action = std::make_unique <MediatorAction>();
+    action->execute();
+}
+
 int main()
 {
     exeStateAction();
     exeSmartPointerAction();
+    exeMediatorAction();
     return EXIT_SUCCESS;
 }
