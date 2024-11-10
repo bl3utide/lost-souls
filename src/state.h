@@ -19,7 +19,9 @@ class State
 {
 public:
     virtual ~State() = default;
-    void setContext(Context* context) { this->context_ = context; }
+    void setContext(Context* context) {
+        this->context_ = context;
+    }
     virtual void handle1() = 0;
     virtual void handle2() = 0;
 
@@ -44,6 +46,10 @@ private:
 class ConcreteStateA : public State
 {
 public:
+    ConcreteStateA()
+    {
+        std::cout << "ConcreteStateA::ConcreteStateA called" << std::endl;
+    }
     ~ConcreteStateA()
     {
         std::cout << "ConcreteStateA::~ConcreteStateA called" << std::endl;
@@ -58,6 +64,10 @@ public:
 class ConcreteStateB : public State
 {
 public:
+    ConcreteStateB()
+    {
+        std::cout << "ConcreteStateB::ConcreteStateB called" << std::endl;
+    }
     ~ConcreteStateB()
     {
         std::cout << "ConcreteStateB::~ConcreteStateB called" << std::endl;
