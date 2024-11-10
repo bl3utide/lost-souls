@@ -42,3 +42,12 @@ void ConcreteStateA::handle1()
 
     this->context_->transitionTo(new ConcreteStateB);
 }
+
+void ConcreteStateB::handle2()
+{
+    std::cout << "ConcreteStateB handles request2" << std::endl;
+    std::cout << "ConcreteStateB wants to change the state of the context."
+        << std::endl;
+
+    this->context_->transitionTo(new ConcreteStateA);
+}

@@ -63,14 +63,7 @@ public:
     {
         std::cout << "ConcreteStateB handles request1." << std::endl;
     }
-    void handle2() override
-    {
-        std::cout << "ConcreteStateB handles request2" << std::endl;
-        std::cout << "ConcreteStateB wants to change the state of the context."
-            << std::endl;
-
-        this->context_->transitionTo(new ConcreteStateA);
-    }
+    void handle2() override;
 };
 
 #endif // STATE_H
