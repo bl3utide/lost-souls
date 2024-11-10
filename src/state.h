@@ -41,6 +41,10 @@ private:
 class ConcreteStateA : public State
 {
 public:
+    ~ConcreteStateA()
+    {
+        std::cout << "ConcreteStateA::~ConcreteStateA called" << std::endl;
+    }
     void handle1() override;
     void handle2() override
     {
@@ -51,6 +55,10 @@ public:
 class ConcreteStateB : public State
 {
 public:
+    ~ConcreteStateB()
+    {
+        std::cout << "ConcreteStateB::~ConcreteStateB called" << std::endl;
+    }
     void handle1() override
     {
         std::cout << "ConcreteStateB handles request1." << std::endl;
