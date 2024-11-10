@@ -3,7 +3,7 @@
 namespace Code2
 {
 
-void SmartPointerAction::execute()
+void SmartPointerAction::execute() const
 {
     std::cout << "[SmartPointerAction::execute] make raw pointer through a unique_ptr" << std::endl;
     auto bar = std::make_unique<Bar>(new Foo{ 3 });

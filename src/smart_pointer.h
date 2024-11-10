@@ -3,16 +3,17 @@
 
 #include <iostream>
 #include <memory>
+#include "action.h"
 
 namespace Code2
 {
 
 class Foo;
 
-class SmartPointerAction final
+class SmartPointerAction final : public ActionBase
 {
 public:
-    void execute();
+    void execute() const override;
 };
 
 class Foo
