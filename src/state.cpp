@@ -2,10 +2,9 @@
 
 void StateAction::execute() const
 {
-    Context* context = new Context(new ConcreteStateA);
+    auto context = std::make_unique<Context>(new ConcreteStateA);
     context->request1();
     context->request2();
-    delete context;
 }
 
 Context::Context(State* state)
