@@ -1,5 +1,8 @@
 #include "smart_pointer.h"
 
+namespace Code2
+{
+
 void SmartPointerAction::execute()
 {
     std::cout << "[SmartPointerAction::execute] make raw pointer through a unique_ptr" << std::endl;
@@ -10,3 +13,5 @@ void SmartPointerAction::execute()
     bar->whatIsFooX();
     std::cout << "[SmartPointerAction::execute] exec end" << std::endl;
 }
+
+} // namespace Cod2

@@ -1,5 +1,8 @@
 #include "state.h"
 
+namespace Code1
+{
+
 void StateAction::execute() const
 {
     auto context = std::make_unique<Context>(new ConcreteStateA);
@@ -51,3 +54,5 @@ void ConcreteStateB::handle2()
 
     this->context_->transitionTo(new ConcreteStateA);
 }
+
+} // namespace Code1

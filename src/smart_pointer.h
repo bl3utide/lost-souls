@@ -4,6 +4,9 @@
 #include <iostream>
 #include <memory>
 
+namespace Code2
+{
+
 class Foo;
 
 class SmartPointerAction final
@@ -70,5 +73,7 @@ private:
     // having obj as smart pointer
     const std::unique_ptr<Foo> foo_;
 };
+
+} // namespace Cod2
 
 #endif // SMART_POINTER_H

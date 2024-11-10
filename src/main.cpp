@@ -27,6 +27,7 @@ static void exeCallbackAction()
 
 static void exeStateAction()
 {
+    using namespace Code1;
     std::cout << "======== state ========" << std::endl;
     const auto action = std::make_unique<StateAction>();
     action->execute();
@@ -34,6 +35,7 @@ static void exeStateAction()
 
 static void exeSmartPointerAction()
 {
+    using namespace Code2;
     std::cout << "======== smart pointer ========" << std::endl;
     auto action = std::make_unique <SmartPointerAction>();
     action->execute();
@@ -41,6 +43,7 @@ static void exeSmartPointerAction()
 
 static void exeMediatorAction()
 {
+    using namespace Code3;
     std::cout << "======== mediator ========" << std::endl;
     auto action = std::make_unique <MediatorAction>();
     action->execute();

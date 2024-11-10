@@ -4,6 +4,9 @@
 #include <iostream>
 #include "action.h"
 
+namespace Code1
+{
+
 class StateAction final : public ActionBase
 {
 public:
@@ -65,5 +68,7 @@ public:
     }
     void handle2() override;
 };
+
+} // namespace Code1
 
 #endif // STATE_H

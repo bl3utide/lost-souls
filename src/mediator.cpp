@@ -1,5 +1,8 @@
 #include "mediator.h"
 
+namespace Code3
+{
+
 void MediatorAction::execute() const
 {
     Component1* c1 = new Component1;
@@ -15,3 +18,5 @@ void MediatorAction::execute() const
     delete c2;
     delete mediator;
 }
+
+} // namespace Code3

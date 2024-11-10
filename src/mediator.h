@@ -5,6 +5,9 @@
 #include <iostream>
 #include "action.h"
 
+namespace Code3
+{
+
 class MediatorAction final : public ActionBase
 {
 public:
@@ -92,5 +95,7 @@ public:
         }
     }
 };
+
+} // namespace Code3
 
 #endif // MEDIATOR_H
