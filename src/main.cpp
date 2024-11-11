@@ -3,6 +3,7 @@
 
 #include "callback.h"
 #include "state.h"
+#include "state_sp.h"
 #include "smart_pointer.h"
 #include "mediator.h"
 
@@ -64,8 +65,8 @@ static void exeMediatorAction()
 int main()
 {
     exeStateAction();
+    exeStateSpAction();
     exeSmartPointerAction();
     exeMediatorAction();
-    exeStateSpAction();
     return EXIT_SUCCESS;
 }
