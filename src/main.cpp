@@ -34,6 +34,15 @@ static void exeStateAction()
     std::cout << "\n";
 }
 
+static void exeStateSpAction()
+{
+    using namespace Code1Sp;
+    std::cout << "======== state (smart pointer version) ========" << std::endl;
+    const auto action = std::make_unique<StateAction>();
+    action->execute();
+    std::cout << "\n";
+}
+
 static void exeSmartPointerAction()
 {
     using namespace Code2;
@@ -57,5 +66,6 @@ int main()
     exeStateAction();
     exeSmartPointerAction();
     exeMediatorAction();
+    exeStateSpAction();
     return EXIT_SUCCESS;
 }
