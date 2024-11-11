@@ -1,7 +1,6 @@
 #ifndef STATE_H
 #define STATE_H
 
-#include <iostream>
 #include "action.h"
 
 namespace Code1

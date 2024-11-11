@@ -1,3 +1,4 @@
+#include <iostream>
 #include "state.h"
 
 namespace Code1
