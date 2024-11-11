@@ -31,6 +31,7 @@ static void exeStateAction()
     std::cout << "======== state ========" << std::endl;
     const auto action = std::make_unique<StateAction>();
     action->execute();
+    std::cout << "\n";
 }
 
 static void exeSmartPointerAction()
@@ -39,6 +40,7 @@ static void exeSmartPointerAction()
     std::cout << "======== smart pointer ========" << std::endl;
     auto action = std::make_unique<SmartPointerAction>();
     action->execute();
+    std::cout << "\n";
 }
 
 static void exeMediatorAction()
@@ -47,6 +49,7 @@ static void exeMediatorAction()
     std::cout << "======== mediator ========" << std::endl;
     auto action = std::make_unique<MediatorAction>();
     action->execute();
+    std::cout << "\n";
 }
 
 int main()
