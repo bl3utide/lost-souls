@@ -37,7 +37,7 @@ static void exeSmartPointerAction()
 {
     using namespace Code2;
     std::cout << "======== smart pointer ========" << std::endl;
-    auto action = std::make_unique <SmartPointerAction>();
+    auto action = std::make_unique<SmartPointerAction>();
     action->execute();
 }
 
@@ -45,7 +45,7 @@ static void exeMediatorAction()
 {
     using namespace Code3;
     std::cout << "======== mediator ========" << std::endl;
-    auto action = std::make_unique <MediatorAction>();
+    auto action = std::make_unique<MediatorAction>();
     action->execute();
 }
 
