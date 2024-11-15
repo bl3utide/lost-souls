@@ -2,16 +2,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "cl.exe build and debug active file",
+            "name": "(msvc) Launch",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}\\bin\\debug\\${fileWorkspaceFolderBasename}.exe",
+            "program": "${command:cmake.launchTargetPath}",
             "args": [],
-            "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
-            "environment": [],
-            "console": "integratedTerminal",
-            "preLaunchTask": "debug-build"
-        },
+            "preLaunchTask": "CMake: install"
+        }
     ]
 }

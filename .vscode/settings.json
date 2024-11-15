@@ -1,4 +1,7 @@
 {
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.installPrefix": "${workspaceFolder}/build/install",
+    "cmake.configureArgs": [],
     "files.associations": {
         "optional": "cpp"
     }
