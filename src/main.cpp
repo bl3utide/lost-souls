@@ -1,11 +1,11 @@
 #include <iostream>
 #include <memory>
 
-#include "callback.h"
-#include "state.h"
-#include "state_sp.h"
-#include "smart_pointer.h"
-#include "mediator.h"
+#include "callback/callback.h"
+#include "state/state.h"
+#include "state/state_sp.h"
+#include "smart_pointer/smart_pointer.h"
+#include "mediator/mediator.h"
 
 static void exeCallbackAction()
 {
