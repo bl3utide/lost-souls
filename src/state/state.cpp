@@ -10,7 +10,8 @@ void StateAction::execute() const {
     delete context;
 }
 
-Context::Context(State* state) : state_(nullptr) {
+Context::Context(State* state)
+    : state_(nullptr) {
     this->transitionTo(state);
 }
 

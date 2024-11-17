@@ -24,7 +24,9 @@ protected:
     Mediator* mediator_;
 
 public:
-    BaseComponent(Mediator* mediator = nullptr) : mediator_(mediator) {}
+    BaseComponent(Mediator* mediator = nullptr)
+        : mediator_(mediator) {
+    }
 
     void setMediator(Mediator* mediator) {
         this->mediator_ = mediator;
@@ -64,7 +66,8 @@ private:
 
 public:
     ConcreteMediator(Component1* c1, Component2* c2)
-        : component1_(c1), component2_(c2) {
+        : component1_(c1),
+          component2_(c2) {
         this->component1_->setMediator(this);
         this->component2_->setMediator(this);
     }

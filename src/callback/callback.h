@@ -39,7 +39,8 @@ template<class T>
     requires std::derived_from<T, CallbackBase>
 class CallbackAssignor {
 public:
-    explicit CallbackAssignor<T>(InputConnection& conn) : conn_(&conn) {
+    explicit CallbackAssignor<T>(InputConnection& conn)
+        : conn_(&conn) {
         callback_ = std::make_unique<T>();
     }
 

@@ -9,7 +9,8 @@ void StateAction::execute() const {
     context->request2();
 }
 
-Context::Context(std::unique_ptr<State> state) : state_(nullptr) {
+Context::Context(std::unique_ptr<State> state)
+    : state_(nullptr) {
     std::cout << "[Context::Context] called" << std::endl;
     this->transitionTo(std::move(state));
 }

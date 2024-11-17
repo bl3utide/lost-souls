@@ -15,7 +15,8 @@ static void exeCallbackAction() {
         CallbackAssignor<CallbackConcereteA>{ conn }.setCallback();
         c = conn.cb_;
         conn.invoke();
-    } catch (const std::exception& e) {
+    }
+    catch (const std::exception& e) {
         std::cerr << e.what() << '\n';
     }
 

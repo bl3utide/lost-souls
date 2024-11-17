@@ -18,7 +18,8 @@ class Foo {
     int x_;
 
 public:
-    explicit Foo(int x) : x_(x) {
+    explicit Foo(int x)
+        : x_(x) {
         std::cout << "[Foo::Foo] x = " << x_ << std::endl;
     }
 
@@ -39,7 +40,9 @@ class FooFoo : public Foo {
     int y_;
 
 public:
-    explicit FooFoo(int x, int y) : y_(y), Foo(x) {
+    explicit FooFoo(int x, int y)
+        : y_(y),
+          Foo(x) {
         std::cout << "[FooFoo::FooFoo] y = " << y_ << std::endl;
     }
 
@@ -59,7 +62,8 @@ public:
 class Bar {
 public:
     // constructor accepts obj as pointer
-    Bar(Foo* foo) : foo_(foo) {
+    Bar(Foo* foo)
+        : foo_(foo) {
         std::cout << "[Bar::Bar] foo.x_ : " << foo_->getX() << std::endl;
     }
 
