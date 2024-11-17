@@ -1,10 +1,8 @@
 #include "mediator.h"
 
-namespace Code3
-{
+namespace Code3 {
 
-void MediatorAction::execute() const
-{
+void MediatorAction::execute() const {
     Component1* c1 = new Component1;
     Component2* c2 = new Component2;
     ConcreteMediator* mediator = new ConcreteMediator(c1, c2);

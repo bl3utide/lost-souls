@@ -1,58 +1,49 @@
 #ifndef CALLBACK_H
 #define CALLBACK_H
 
-#include <iostream>
 #include <concepts>
 #include <functional>
+#include <iostream>
 
 using CallbackT = void (*)(int, int);
 
-class InputConnection
-{
+class InputConnection {
 public:
-    void invoke()
-    {
+    void invoke() {
         cb_(1, 2);
     }
-    void setCallback(CallbackT cb, void* data = (void*)0)
-    {
+
+    void setCallback(CallbackT cb, void* data = (void*)0) {
         cb_ = cb;
     }
+
     CallbackT cb_;
 };
 
-class CallbackBase
-{
+class CallbackBase {
 public:
     virtual ~CallbackBase() = default;
     virtual CallbackT getCallbackFunc() = 0;
 };
 
-class CallbackConcereteA : public CallbackBase
-{
+class CallbackConcereteA : public CallbackBase {
 public:
-    CallbackT getCallbackFunc() override
-    {
-        return [](int a, int b) -> void
-            {
-                std::cout << "(invoked) a: " << a << ", b: " << b << std::endl;
-            };
+    CallbackT getCallbackFunc() override {
+        return [](int a, int b) -> void {
+            std::cout << "(invoked) a: " << a << ", b: " << b << std::endl;
+        };
     }
 };
 
 template<class T>
     requires std::derived_from<T, CallbackBase>
-class CallbackAssignor
-{
+class CallbackAssignor {
 public:
-    explicit CallbackAssignor<T>(InputConnection& conn)
-        : conn_(&conn)
-    {
+    explicit CallbackAssignor<T>(InputConnection& conn) : conn_(&conn) {
         callback_ = std::make_unique<T>();
     }
 
-    virtual void setCallback() final
-    {
+    virtual void setCallback() final {
         auto fp = callback_->getCallbackFunc();
         conn_->setCallback(callback_->getCallbackFunc());
     }

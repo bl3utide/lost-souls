@@ -1,8 +1,7 @@
 #ifndef ACTION_H
 #define ACTION_H
 
-class ActionBase
-{
+class ActionBase {
 public:
     virtual void execute() const = 0;
 };

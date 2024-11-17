@@ -2,32 +2,27 @@
 #include <memory>
 
 #include "callback/callback.h"
+#include "mediator/mediator.h"
+#include "smart_pointer/smart_pointer.h"
 #include "state/state.h"
 #include "state/state_sp.h"
-#include "smart_pointer/smart_pointer.h"
-#include "mediator/mediator.h"
 
-static void exeCallbackAction()
-{
+static void exeCallbackAction() {
     CallbackT c;
-    try
-    {
+    try {
         InputConnection conn;
         std::cout << typeid(conn).name() << std::endl;
         CallbackAssignor<CallbackConcereteA>{ conn }.setCallback();
         c = conn.cb_;
         conn.invoke();
-    }
-    catch (const std::exception& e)
-    {
+    } catch (const std::exception& e) {
         std::cerr << e.what() << '\n';
     }
 
     c(9, 10);
 }
 
-static void exeStateAction()
-{
+static void exeStateAction() {
     using namespace Code1;
     std::cout << "======== state ========" << std::endl;
     const auto action = std::make_unique<StateAction>();
@@ -35,8 +30,7 @@ static void exeStateAction()
     std::cout << "\n";
 }
 
-static void exeStateSpAction()
-{
+static void exeStateSpAction() {
     using namespace Code1Sp;
     std::cout << "======== state (smart pointer version) ========" << std::endl;
     const auto action = std::make_unique<StateAction>();
@@ -44,8 +38,7 @@ static void exeStateSpAction()
     std::cout << "\n";
 }
 
-static void exeSmartPointerAction()
-{
+static void exeSmartPointerAction() {
     using namespace Code2;
     std::cout << "======== smart pointer ========" << std::endl;
     auto action = std::make_unique<SmartPointerAction>();
@@ -53,8 +46,7 @@ static void exeSmartPointerAction()
     std::cout << "\n";
 }
 
-static void exeMediatorAction()
-{
+static void exeMediatorAction() {
     using namespace Code3;
     std::cout << "======== mediator ========" << std::endl;
     auto action = std::make_unique<MediatorAction>();
@@ -62,8 +54,7 @@ static void exeMediatorAction()
     std::cout << "\n";
 }
 
-int main()
-{
+int main() {
     exeStateAction();
     exeStateSpAction();
     exeSmartPointerAction();

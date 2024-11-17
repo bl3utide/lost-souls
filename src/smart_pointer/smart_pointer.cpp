@@ -1,11 +1,11 @@
 #include "smart_pointer.h"
 
-namespace Code2
-{
+namespace Code2 {
 
-void SmartPointerAction::execute() const
-{
-    std::cout << "[SmartPointerAction::execute] make raw pointer through a unique_ptr" << std::endl;
+void SmartPointerAction::execute() const {
+    std::cout
+        << "[SmartPointerAction::execute] make raw pointer through a unique_ptr"
+        << std::endl;
     auto bar = std::make_unique<Bar>(new Foo{ 3 });
     bar->whatIsFooX();
     std::cout << "[SmartPointerAction::execute] override bar obj" << std::endl;
@@ -14,4 +14,4 @@ void SmartPointerAction::execute() const
     std::cout << "[SmartPointerAction::execute] exec end" << std::endl;
 }
 
-} // namespace Cod2
+} // namespace Code2
