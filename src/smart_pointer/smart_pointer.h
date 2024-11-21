@@ -80,6 +80,78 @@ private:
     const std::unique_ptr<Foo> foo_;
 };
 
+class Biz {
+public:
+    static Biz* create(int x) {
+        return new Biz(x);
+    }
+
+    ~Biz() {
+        std::cout << "[Biz::~Biz] biz.x_: " << x_ << std::endl;
+    }
+
+private:
+    explicit Biz(int x)
+        : x_(x) {
+        std::cout << "[Biz::Biz] biz.x_: " << x_ << std::endl;
+    }
+
+    int x_;
+};
+
+class Something {
+public:
+    Something(int a)
+        : a_(a) {
+        std::cout << "Something::Something a = " << a_ << "\n";
+    }
+
+    ~Something() {
+        std::cout << "Something::~Something a = " << a_ << "\n";
+    }
+
+private:
+    int a_;
+};
+
+class HavingPointer {
+public:
+    explicit HavingPointer(int a)
+        : something_(new Something{ a }) {
+        std::cout << "HavingPointer::HavingPointer initialize something a = "
+                  << a << "\n";
+    }
+
+    virtual ~HavingPointer() {
+        std::cout << "HavingPointer::~HavingPointer called\n";
+        if (something_ != nullptr) {
+            std::cout << "HavingPointer::~HavingPointer finalize something\n";
+            delete something_;
+            something_ = nullptr;
+        }
+    }
+
+    virtual void some_func() = 0;
+
+private:
+    Something* something_;
+};
+
+class HpConcrete : public HavingPointer {
+public:
+    explicit HpConcrete(int a)
+        : HavingPointer(a) {
+        std::cout << "HpConcrete::HpConcrete called\n";
+    }
+
+    ~HpConcrete() {
+        std::cout << "HpConcrete::~HpConcrete called\n";
+    }
+
+    void some_func() override {
+    }
+};
+
 } // namespace Code2
 
 #endif // SMART_POINTER_H
